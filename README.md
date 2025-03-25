@@ -1,50 +1,223 @@
-# Welcome to your Expo app 👋
+📌 **Project ini dibuat oleh [Ararya](https://github.com/Araryarch)** – Lihat di GitHub: [Araryarch/BunJS-React-Native](https://github.com/Araryarch)  
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+---
 
-## Get started
-
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+## **📂 Struktur Proyek**  
+```
+/expo-bun-template
+ ├── assets/           # Folder untuk gambar, ikon, dan font
+ ├── src/
+ │   ├── components/   # Komponen UI reusable
+ │   ├── screens/      # Halaman utama aplikasi
+ │   ├── navigation/   # Konfigurasi navigasi
+ │   ├── hooks/        # Custom hooks
+ │   ├── utils/        # Helper functions
+ ├── App.tsx           # Entry point aplikasi
+ ├── package.json      # Konfigurasi dependensi
+ ├── bun.lockb         # Lockfile untuk BunJS
+ ├── app.json          # Konfigurasi Expo
+ ├── .gitignore        # File yang diabaikan oleh Git
+ ├── .expo/            # Konfigurasi Expo Go
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## **📦 Dependencies (terinstall otomatis dengan BunJS)**  
+- **Expo SDK** – Untuk framework React Native  
+- **React Navigation** – Untuk navigasi antar halaman  
+- **React Native Gesture Handler** – Untuk gesture navigasi  
+- **React Native Reanimated** – Untuk animasi performa tinggi  
 
-To learn more about developing your project with Expo, look at the following resources:
+---
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## **🚀 Cara Menggunakan Template Ini**  
+Clone repository dan jalankan proyek:  
+```sh
+git clone https://github.com/Araryarch/BunJS-React-Native my-app
+cd my-app
 
-## Join the community
+# Install dependencies dengan Bun
+bun install
 
-Join our community of developers creating universal apps.
+# Jalankan aplikasi
+bun run start
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+---
+
+## **📌 Template Expo BunJS (Kode Sumber)**  
+
+### **🟢 `App.tsx` (Entry Point Aplikasi)**  
+```tsx
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
+
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <Text>🚀 Welcome to Expo + BunJS Template!</Text>
+      <StatusBar style="auto" />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#fff",
+  },
+});
+```
+
+---
+
+### **🟠 `package.json` (Konfigurasi Expo dengan BunJS)**
+```json
+{
+  "name": "expo-bun-template",
+  "version": "1.0.0",
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "expo": "^49.0.0",
+    "react": "18.2.0",
+    "react-native": "0.72.0",
+    "@react-navigation/native": "^6.1.1",
+    "react-native-gesture-handler": "^2.12.0",
+    "react-native-reanimated": "^3.5.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0"
+  }
+}
+```
+
+---
+
+### **🔵 `app.json` (Konfigurasi Expo)**
+```json
+{
+  "expo": {
+    "name": "Expo BunJS Template",
+    "slug": "expo-bun-template",
+    "version": "1.0.0",
+    "sdkVersion": "49.0.0",
+    "platforms": ["ios", "android", "web"],
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
+```
+
+---
+
+### **🟣 `src/screens/HomeScreen.tsx` (Halaman Utama)**
+```tsx
+import { View, Text, StyleSheet } from "react-native";
+
+export default function HomeScreen() {
+  return (
+    <View style={styles.container}>
+      <Text>🏠 Ini adalah Home Screen</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#f5f5f5",
+  },
+});
+```
+
+---
+
+### **🟡 `src/navigation/AppNavigator.tsx` (Navigasi)**
+```tsx
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import HomeScreen from "../screens/HomeScreen";
+
+const Stack = createStackNavigator();
+
+export default function AppNavigator() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+```
+
+---
+
+## **📌 Fitur Unggulan Template Ini**  
+✅ **Paket Expo Terbaru** – Menggunakan SDK **49.0.0** untuk performa optimal  
+✅ **BunJS** – Instalasi **super cepat** dibanding `npm` atau `yarn`  
+✅ **React Navigation** – Navigasi sudah dikonfigurasi  
+✅ **Splash Screen & Icon** – Disiapkan otomatis lewat `app.json`  
+✅ **Siap untuk Deployment** – Bisa langsung build ke **Android & iOS**  
+
+---
+
+## **📦 Build dan Deploy ke Store**  
+
+### **🔹 Android & iOS Build**  
+Jika ingin build ke Play Store/App Store, gunakan:  
+```sh
+bun run expo build:android
+bun run expo build:ios
+```
+
+### **🔹 OTA Update (Tanpa Upload ke Store)**  
+```sh
+bun run expo publish
+```
+
+---
+
+## **🔗 Download & Gunakan Template Ini**  
+📌 **Project ini dibuat oleh [Ararya](https://github.com/Araryarch)** – Lihat di GitHub: [Araryarch/BunJS-React-Native](https://github.com/Araryarch)  
+
+🚀 **Langsung clone & mulai ngoding!**  
+```sh
+git clone https://github.com/Araryarch/BunJS-React-Native my-app
+cd my-app
+bun install
+bun run start
+```
+
+---
