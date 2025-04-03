@@ -9,7 +9,12 @@
     "ios": "DARK_MODE=media expo start --ios",
     "web": "DARK_MODE=media expo start --web",
     "test": "jest --watchAll",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "prepare": "husky",
+    "format": "prettier --write . && eslint . --fix && bun typecheck && bun lint:strict",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write .",
+    "typecheck" : "tsc --noEmit"
   },
   "jest": {
     "preset": "jest-expo"
