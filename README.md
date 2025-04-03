@@ -1,50 +1,116 @@
-# Welcome to your Expo app 👋
+# Expo Bun Template
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A modern React Native starter template with Bun.js, Gluestack UI, and essential development tools preconfigured.
 
-## Get started
+## Created By
 
-1. Install dependencies
+This template was created by [Araryarch](https://github.com/Araryarch/expo-bun-template.git).
+
+## Features
+
+- ⚡ **Bun.js** - Faster runtime, package manager, and test runner
+- 🎨 **Gluestack UI** - Beautiful, accessible UI components
+- 📱 **Expo** - Cross-platform React Native development
+- 🐶 **Husky** - Git hooks made easy
+- 📝 **Commitlint** - Enforce conventional commit messages
+- 🧹 **ESLint** - JavaScript/TypeScript linting
+- 🛠 **Preconfigured Tooling** - Batteries included setup
+
+## Prerequisites
+
+- [Bun.js](https://bun.sh/) (v1.0.0 or later)
+- Node.js (v18 or later) - for Expo CLI if not using Bun
+- [Expo CLI](https://docs.expo.dev/get-started/installation/) (optional)
+
+## Getting Started
+
+1. **Clone the repository**:
 
    ```bash
-   npm install
+   git clone https://github.com/Araryarch/expo-bun-template.git
+   cd expo-bun-template
    ```
 
-2. Start the app
+2. **Install dependencies**:
 
    ```bash
-    npx expo start
+   bun install
    ```
 
-In the output, you'll find options to open the app in a
+3. **Start the development server**:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+   ```bash
+   bun expo start
+   ```
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+   Alternatively, if you have Expo CLI installed globally:
 
-## Get a fresh project
+   ```bash
+   expo start
+   ```
 
-When you're ready, run:
+## Scripts
 
-```bash
-npm run reset-project
+| Command       | Description                             |
+| ------------- | --------------------------------------- |
+| `bun start`   | Starts the Expo development server      |
+| `bun lint`    | Runs ESLint on your code                |
+| `bun test`    | Runs tests (configure your test runner) |
+| `bun prepare` | Sets up Husky git hooks                 |
+| `bun build`   | Builds the app for production           |
+
+## Project Structure
+
+```
+expo-bun-template/
+├── assets/               # Static assets (images, fonts, etc.)
+├── components/           # Reusable UI components
+├── app/                  # Main application entry and navigation
+├── hooks/                # Custom React hooks
+├── lib/                  # Utilities and helpers
+├── screens/              # Application screens
+├── .eslintrc.js          # ESLint configuration
+├── .commitlintrc.js      # Commitlint configuration
+├── app.json              # Expo configuration
+├── bun.lockb             # Bun lockfile
+├── package.json          # Project dependencies and scripts
+└── README.md             # You are here
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Commit Convention
 
-## Learn more
+This project uses [Conventional Commits](https://www.conventionalcommits.org/). Commit messages must follow this format:
 
-To learn more about developing your project with Expo, look at the following resources:
+```
+type(scope?): subject
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Examples:
 
-## Join the community
+- `feat(home): add new welcome banner`
+- `fix(button): correct padding issue`
+- `docs: update installation instructions`
 
-Join our community of developers creating universal apps.
+## Included UI Components
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+The template comes with several pre-built Gluestack UI components:
+
+- Button
+- Text
+- Input
+- Card
+- Avatar
+- And more...
+
+You can find these in the `components` directory and customize them as needed.
+
+## Why This Stack?
+
+- **Bun.js**: Offers significantly faster installs and runtime compared to traditional Node/npm/yarn setups.
+- **Gluestack UI**: Provides beautiful, accessible components that follow best practices out of the box.
+- **Husky + Commitlint**: Ensures consistent commit messages and better project history.
+- **ESLint**: Catches potential issues early and enforces code style.
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request.
