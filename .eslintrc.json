@@ -1,41 +1,47 @@
 {
   "env": {
-    "browser": true,
+    "browser": false, // Tidak diperlukan untuk React Native
     "es2021": true,
-    "node": true
+    "node": true,
+    "react-native/react-native": true // Aktifkan lingkungan React Native
   },
   "extends": [
     "eslint:recommended",
-    "next",
-    "next/core-web-vitals",
+    "plugin:react/recommended", // Untuk React
+    "plugin:react-native/all", // Menambahkan aturan untuk React Native
     "prettier",
     "plugin:@typescript-eslint/recommended"
   ],
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint", "simple-import-sort", "unused-imports"],
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "react-native", // Tambahkan plugin React Native
+    "simple-import-sort",
+    "unused-imports"
+  ],
   "rules": {
-    "no-unused-vars": "off",
-    "no-console": "warn",
-    "react/display-name": "off",
-    "prefer-spread": "off",
-    "simple-import-sort/imports": "warn",
-    "simple-import-sort/exports": "warn",
-    // Unused imports
-    "@typescript-eslint/no-unused-vars": "off",
-    "unused-imports/no-unused-imports": "warn",
+    "no-unused-vars": "off", // Menonaktifkan aturan unused-vars di ESLint
+    "no-console": "warn", // Menambahkan peringatan untuk penggunaan console.log
+    "react/display-name": "off", // Menonaktifkan aturan display-name React
+    "prefer-spread": "off", // Menonaktifkan aturan prefer-spread
+    "simple-import-sort/imports": "warn", // Mengaktifkan peringatan untuk sorting import
+    "simple-import-sort/exports": "warn", // Mengaktifkan peringatan untuk sorting ekspor
+    "@typescript-eslint/no-unused-vars": "off", // Menonaktifkan aturan unused-vars untuk TypeScript
+    "unused-imports/no-unused-imports": "warn", // Menambahkan peringatan untuk impor yang tidak digunakan
     "unused-imports/no-unused-vars": [
       "warn",
       {
         "vars": "all",
-        "varsIgnorePattern": "^_",
-        "args": "after-used",
-        "argsIgnorePattern": "^_"
+        "varsIgnorePattern": "^_", // Mengabaikan variabel yang dimulai dengan "_"
+        "args": "after-used", // Mengabaikan argumen yang tidak digunakan
+        "argsIgnorePattern": "^_" // Mengabaikan argumen yang dimulai dengan "_"
       }
     ]
   },
   "globals": {
-    "React": true,
-    "JSX": true
+    "React": "writable", // Mengatur React sebagai global variable untuk React Native
+    "JSX": "readonly" // Menandai JSX sebagai global untuk React
   },
   "root": true
 }

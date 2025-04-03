@@ -10,6 +10,7 @@
     "web": "DARK_MODE=media expo start --web",
     "test": "jest --watchAll",
     "lint": "expo lint",
+    "lint:strict": "expo lint",
     "prepare": "husky",
     "format": "prettier --write . && eslint . --fix && bun typecheck && bun lint:strict",
     "format:check": "prettier --check .",
